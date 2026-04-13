@@ -88,11 +88,12 @@
                     window.NativeApp.setColor(rgb.r, rgb.g, rgb.b);
                 }
             }
-            if (window.Android && window.Android.hideLoading) {
-                window.Android.hideLoading();
-            } else if (window.NativeApp && window.NativeApp.hideLoading) {
-                window.NativeApp.hideLoading();
-            }
+        }
+
+        if (window.Android && window.Android.hideLoading) {
+            window.Android.hideLoading();
+        } else if (window.NativeApp && window.NativeApp.hideLoading) {
+            window.NativeApp.hideLoading();
         }
 
         if (window.location.hash) {
@@ -142,7 +143,7 @@
                                 window.NativeApp.closeWebView()
                             } else {
                                 try { uni.webView.redirectTo({url:'/pages/index/index'}); } catch (e) {}
-                                window.location.href = '/index.html';
+                                window.location.href = BASE_URL + '/index.html';
                             }
                         })
                     }) ()
